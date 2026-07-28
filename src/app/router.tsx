@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashboardPage from '../../features/dashboard/DashboardPage';
 import { ROUTES } from './routes';
+import AppLayout from '../../components/layout/AppLayout';
 
 
 
@@ -9,8 +10,10 @@ function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route
-  path={ROUTES.dashboard}
-  element={<DashboardPage/>
+  path={ROUTES.HOME}
+  element={<AppLayout>
+    <DashboardPage />
+</AppLayout>
   }
 /> 
       </Routes>
