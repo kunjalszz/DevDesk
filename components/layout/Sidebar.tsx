@@ -1,29 +1,28 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import { ROUTES } from '../../src/app/routes';
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../src/app/routes";
 
-const Sidebar = () => {
+function Sidebar() {
   return (
-   <aside>
-    <ul>
-      <li>
-        <Link to={ROUTES.HOME}>Dashboard</Link>
-      </li>
+    <aside className="w-64 min-h-screen border-r border-stone-300 bg-stone-50 p-6">
+      <nav className="space-y-3">
+        <Link className="block rounded-lg p-2 hover:bg-stone-200" to={ROUTES.HOME}>
+          🏡 Dashboard
+        </Link>
 
-       <li>
-        <Link to={ROUTES.JSON_FORMATTER}>JSON Formatter</Link>
-      </li>
+        <Link className="block rounded-lg p-2 hover:bg-stone-200" to={ROUTES.JSON_FORMATTER}>
+          📄 JSON Formatter
+        </Link>
 
-       <li>
-        <Link to={ROUTES.REGEX_TESTER}>Regex Tester</Link>
-      </li>
+        <Link className="block rounded-lg p-2 hover:bg-stone-200" to={ROUTES.REGEX_TESTER}>
+          🔍 Regex Tester
+        </Link>
 
-       <li>
-        <Link to={ROUTES.JWT_DECODER}>JWT Decoder</Link>
-      </li>
-    </ul>
-   </aside>
-  )
+        <Link className="block rounded-lg p-2 hover:bg-stone-200" to={ROUTES.JWT_DECODER}>
+          🔐 JWT Decoder
+        </Link>
+      </nav>
+    </aside>
+  );
 }
 
-export default Sidebar
+export default Sidebar;
