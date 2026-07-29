@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../src/app/routes";
+import { ROUTES } from "../../app/routes";
+
 
 function Sidebar() {
   return (

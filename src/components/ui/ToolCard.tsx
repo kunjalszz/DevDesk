@@ -19,9 +19,12 @@ function ToolCard({ tool }: ToolCardProps) {
     const Icon = tool.icon;
   return (
     <Card className="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-        <Icon classname="h-8 w-8 text-green-700"/>
+     
       <CardHeader>
-        <div className="mb-4">{tool.icon}</div>
+        <div className="mb-4">
+            <Icon className="h-8 w-8 text-green-700"/>
+        </div>
+
 
         <CardTitle>{tool.title}</CardTitle>
 
