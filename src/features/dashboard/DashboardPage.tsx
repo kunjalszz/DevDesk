@@ -1,28 +1,32 @@
 import ToolCard from "@/components/ui/ToolCard";
 
+import DashboardHero from "./components/DashboardHero";
 import { tools } from "./tools";
 
 function DashboardPage() {
   return (
-    <section className="space-y-10">
-      <div>
-        <h1 className="text-4xl font-bold text-stone-800">
-          🍃 Welcome Back
-        </h1>
-
-        <p className="mt-3 text-lg text-stone-600">
-          The forest is quiet today. Choose a tool and start crafting.
-        </p>
-      </div>
+    <section className="mx-auto max-w-7xl space-y-8">
+      <DashboardHero />
 
       <div>
-        <h2 className="mb-6 text-2xl font-semibold text-stone-700">
-          Developer Toolbox
-        </h2>
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-stone-800">
+              Developer Toolbox
+            </h2>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <p className="mt-1 text-stone-500">
+              Everything you need to work faster.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {tools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
+            <ToolCard
+              key={tool.id}
+              tool={tool}
+            />
           ))}
         </div>
       </div>

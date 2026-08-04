@@ -18,11 +18,35 @@ type ToolCardProps = {
 function ToolCard({ tool }: ToolCardProps) {
     const Icon = tool.icon;
   return (
-    <Card className="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+<Card
+  className="
+    group
+    overflow-hidden
+    rounded-3xl
+    border-stone-200
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:border-emerald-300
+    hover:shadow-xl
+  "
+>
      
       <CardHeader>
-        <div className="mb-4">
-            <Icon className="h-8 w-8 text-green-700"/>
+        <div
+    className="
+    mb-5
+    flex
+    h-14
+    w-14
+    items-center
+    justify-center
+    rounded-2xl
+    bg-emerald-100
+    transition-all
+    group-hover:scale-110
+">
+            <Icon className="bg-gradient-to-br from-emerald-100 to-lime-50 h-14 w-14"/>
         </div>
 
 
@@ -32,8 +56,9 @@ function ToolCard({ tool }: ToolCardProps) {
       </CardHeader>
 
       <CardContent>
-        <Button asChild className="w-full">
-          <Link to={tool.route}>Open →</Link>
+        <Button asChild  variant="outline"
+    className="w-full rounded-xl">
+          <Link to={tool.route}>Open Tool →</Link>
         </Button>
       </CardContent>
     </Card>

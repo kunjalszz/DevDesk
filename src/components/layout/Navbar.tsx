@@ -1,13 +1,17 @@
+import SearchBar from '../ui/SearchBar';
+import { Button } from "../ui/button"
+
+
 function Navbar() {
   return (
-    <header className="flex h-16 items-center justify-between border-b border-stone-300 bg-stone-50 px-8">
-      <h1 className="text-2xl font-bold">
-        🌿 DevDesk
-      </h1>
+    <header className="sticky top-0 z-50 border-b border-stone-300 bg-stone-50 px-8">
+<div className="mx-auto flex h-16 items-center justify-end gap-4 px-8">
+      <SearchBar/>
 
-      <button className="rounded-lg border border-stone-300 px-4 py-2 hover:bg-stone-200">
-        Theme
-      </button>
+      <Button variant="outline" className='rounded-full'>
+        🌙
+      </Button>
+      </div>
     </header>
   );
 }
