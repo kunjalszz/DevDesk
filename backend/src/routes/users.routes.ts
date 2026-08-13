@@ -1,11 +1,23 @@
 import { Router} from "express"
 import prisma from "../lib/prisma.js"
+import { createUserSchema } from '../validation/user.validation';
+
 
 const router =Router();
 
 router.post("/",async(req, res)=>{
     try{
-        const { name, email, password} = req.body;
+        const result = createUserSchema.safeParse(req.body);
+
+        if(!result.success){
+            return res.status(400).json({
+                success: false,
+                message: " Invalid request data",
+                errors: result.error.issues,
+            });
+        }
+
+        const { name, email, password} = result.data;
 
         const user = await prisma.user.create({
             data: {
